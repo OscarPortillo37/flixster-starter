@@ -26,3 +26,36 @@
     flex-direction: column;
   }
 }
+
+
+/********************* Added ************************/
+/****************************************************/
+/****************************************************/
+/* Movie List Formatting */
+.movie_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie_card_container {
+  width: 20%;
+}
+
+.movie_card {
+  margin: 5%;
+  padding: 1%;
+  height: 50vh;
+  box-shadow: 4px 4px 15px rgb(0, 0, 0, 0.2)
+}
+
+.movie_image {
+  width: 100%;
+}
+
+.movie_title {
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
