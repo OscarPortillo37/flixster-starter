@@ -9,6 +9,7 @@ const App = () => {
     <div className="App">
       <Header />
       <MovieList />
+      <footer>© Oscar Platforms, Inc</footer>
     </div>
   )
 }

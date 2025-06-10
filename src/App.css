@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .App-header {
@@ -31,6 +34,20 @@
 /********************* Added ************************/
 /****************************************************/
 /****************************************************/
+/* Header */
+header {
+  background-color: rgb(64,64,64);
+  color: white;
+}
+
+#search_sort {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+}
+
 /* Movie List Formatting */
 .movie_list {
   display: flex;
@@ -46,8 +63,8 @@
 .movie_card {
   margin: 5%;
   padding: 1%;
-  height: 50vh;
-  box-shadow: 4px 4px 15px rgb(0, 0, 0, 0.2)
+  height: 60vh;
+  box-shadow: 4px 4px 15px rgb(0, 0, 0, 0.2);
 }
 
 .movie_image {
@@ -58,4 +75,14 @@
   font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Footer */
+footer {
+  background-color: rgb(64,64,64);
+  color: white;
+  text-align: center;
+  margin: 0.5%;
+  padding: 0.5% 0;
+  font-size: 0.9rem;
 }
