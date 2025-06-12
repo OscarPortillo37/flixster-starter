@@ -74,7 +74,7 @@ header {
   align-items: center;
   height: 100%;
   width: clamp(90px, 20vw, 120px);
-  padding-top: 2rem;
+  padding-top: 15vh;
   font-size: clamp(14px, 2vw, 16px);
   background-color: rgb(64,64,64);
 }

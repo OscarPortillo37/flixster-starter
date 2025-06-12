@@ -21,19 +21,36 @@ const App = () => {
   const [is_home_tab, setIsHomeTab] = useState(true);
   const [is_like_tab, setIsLikeTab] = useState(false);
   const [is_watch_tab, setIsWatchTab] = useState(false);
+  const [is_display_empty, setIsDisplayEmpty] = useState(false);
+  const [is_show_load_more, setIsShowLoadMore] = useState(true);
 
   // Dynamically render each tab
   useEffect(() => {
     if(is_home_tab) {
       setDisplayedMovies(movies);
+      setIsShowLoadMore(true);
     } else if(is_like_tab) {
       const liked_movies = {results: movies.results.filter((result_movie) => result_movie.liked === true)};
       setDisplayedMovies(liked_movies);
+      setIsShowLoadMore(false);
     } else {
       const watched_movies = {results: movies.results.filter((result_movie) => result_movie.watched === true)};
       setDisplayedMovies(watched_movies);
+      setIsShowLoadMore(false);
     }
   }, [is_home_tab, is_like_tab, is_watch_tab, movies]);
+
+  // Check if there are no movies to display
+  useEffect(() => {
+    if(displayed_movies.results.length === 0) {
+      setIsDisplayEmpty(true);
+      setIsShowLoadMore(false);
+    }
+    else {
+      setIsDisplayEmpty(false);
+      if(is_home_tab) setIsShowLoadMore(true);
+    }
+  }, [displayed_movies])
 
   // Initially fetch genre ID to genre mapping
   useEffect(() => {
@@ -58,7 +75,8 @@ const App = () => {
             <SortForm movies={movies} setMovies={setMovies}/>
           </section>
         </header>
-        <MovieList displayed_movies={displayed_movies} movies={movies} setMovies={setMovies} setPageNo={setPageNo} setOpenModal={setOpenModal} setMovieInfo={setMovieInfo} id_to_genre={id_to_genre} is_home_tab={is_home_tab}/>   
+        <h2 style={{display: is_display_empty ? "block" : "none"}}>{"No Movies Available:("}</h2>
+        <MovieList displayed_movies={displayed_movies} movies={movies} setMovies={setMovies} setPageNo={setPageNo} setOpenModal={setOpenModal} setMovieInfo={setMovieInfo} id_to_genre={id_to_genre} is_show_load_more={is_show_load_more}/>   
       </section>
       <MovieInfoModal open_modal={open_modal} setOpenModal={setOpenModal} movie_info={movie_info} />  
       <footer>© Oscar Platforms, Inc</footer>
