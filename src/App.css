@@ -122,6 +122,9 @@ header {
 
 .movie_title {
   font-weight: bold;
+  line-height: 1em;
+  min-height: 2.1em;
+  max-height: 2.1em;
   overflow: hidden;
   text-overflow: ellipsis;
 }
