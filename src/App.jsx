@@ -48,7 +48,8 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* Header */}
+      <Sidebar setIsHomeTab={setIsHomeTab} setIsLikeTab={setIsLikeTab} setIsWatchTab={setIsWatchTab}/>
+      <section className="body">
         <header>
           <h1>🎥Flixster🎬</h1>
           <section id="search_n_sort">
@@ -56,16 +57,10 @@ const App = () => {
             <SortForm movies={movies} setMovies={setMovies}/>
           </section>
         </header>
-      {/* Body */}
-        <main>
-          <section className="primary_contents">
-            <Sidebar setIsHomeTab={setIsHomeTab} setIsLikeTab={setIsLikeTab} setIsWatchTab={setIsWatchTab}/>
-            <MovieList displayed_movies={displayed_movies} movies={movies} setMovies={setMovies} setPageNo={setPageNo} setOpenModal={setOpenModal} setMovieInfo={setMovieInfo} id_to_genre={id_to_genre}/>
-          </section>    
-        </main>
-        <MovieInfoModal open_modal={open_modal} setOpenModal={setOpenModal} movie_info={movie_info} />  
-      {/* Footer */}
-        <footer>© Oscar Platforms, Inc</footer>
+        <MovieList displayed_movies={displayed_movies} movies={movies} setMovies={setMovies} setPageNo={setPageNo} setOpenModal={setOpenModal} setMovieInfo={setMovieInfo} id_to_genre={id_to_genre}/>   
+      </section>
+      <MovieInfoModal open_modal={open_modal} setOpenModal={setOpenModal} movie_info={movie_info} />  
+      <footer>© Oscar Platforms, Inc</footer>
     </div>
   )
 }

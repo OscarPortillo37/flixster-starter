@@ -29,8 +29,8 @@ const SearchForm = ({setSearchQuery, is_search, setIsSearch, setPageNo, setMovie
     return (
         <form id="search_form" onSubmit={handleSearchSubmit}>
             <input type="text" name="movie_input" placeholder="Search for movie..."/>
-            <button type="submit">Search</button>
-            <button type="button" onClick={handleSearchClear}>Clear</button>
+            <button type="submit">🔍</button>
+            <button type="button" onClick={handleSearchClear}>🗑</button>
         </form>
     );
 }
