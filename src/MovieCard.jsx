@@ -32,7 +32,6 @@ const MovieCard = ({id, img, alt_txt, title, date, overview, genre_ids, vote_avg
         });
         const genres_str = getGenresString(genre_ids, id_to_genre);
         const trailer = await fetchTrailer(id);
-        console.log(trailer);
         setMovieInfo({title: title, img: img, date: date_readable, overview: overview, trailer: trailer, genres: genres_str});
         setOpenModal(true);
     }

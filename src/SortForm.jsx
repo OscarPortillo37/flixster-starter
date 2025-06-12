@@ -5,7 +5,6 @@ const SortForm = ({movies, setMovies}) => {
     const handleChange = (event) => {
         const sort_type_value = event.target.value;
         if(sort_type_value === "sort_title") {
-            console.log("sort_title");
             setMovies((prev_movies) => {
                 const sorted = [...prev_movies.results].sort((a, b) => {
                     return(a.title.localeCompare(b.title));
@@ -14,7 +13,6 @@ const SortForm = ({movies, setMovies}) => {
             });
         }
         else if(sort_type_value === "sort_release_date") {
-            console.log("sort_release_date");
             setMovies((prev_movies) => {
                 const sorted = [...prev_movies.results].sort((a, b) => {
                     const date_a = new Date(a.release_date);
@@ -25,7 +23,6 @@ const SortForm = ({movies, setMovies}) => {
             });
         }
         else if(sort_type_value === "sort_rating") {
-            console.log("sort_rating");
             setMovies((prev_movies) => {
                 const sorted = [...prev_movies.results].sort((a, b) => {
                     return (b.vote_average - a.vote_average);

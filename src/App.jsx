@@ -23,12 +23,13 @@ const App = () => {
   const [is_watch_tab, setIsWatchTab] = useState(false);
   const [is_display_empty, setIsDisplayEmpty] = useState(false);
   const [is_show_load_more, setIsShowLoadMore] = useState(true);
+  const [is_found_all_results, setIsFoundAllResults] = useState(false);
 
   // Dynamically render each tab
   useEffect(() => {
     if(is_home_tab) {
       setDisplayedMovies(movies);
-      setIsShowLoadMore(true);
+      setIsShowLoadMore(!is_found_all_results);
     } else if(is_like_tab) {
       const liked_movies = {results: movies.results.filter((result_movie) => result_movie.liked === true)};
       setDisplayedMovies(liked_movies);
@@ -38,7 +39,7 @@ const App = () => {
       setDisplayedMovies(watched_movies);
       setIsShowLoadMore(false);
     }
-  }, [is_home_tab, is_like_tab, is_watch_tab, movies]);
+  }, [is_home_tab, is_like_tab, is_watch_tab, movies, is_found_all_results]);
 
   // Check if there are no movies to display
   useEffect(() => {
@@ -48,9 +49,9 @@ const App = () => {
     }
     else {
       setIsDisplayEmpty(false);
-      if(is_home_tab) setIsShowLoadMore(true);
+      if(is_home_tab) setIsShowLoadMore(!is_found_all_results);
     }
-  }, [displayed_movies])
+  }, [displayed_movies, is_found_all_results])
 
   // Initially fetch genre ID to genre mapping
   useEffect(() => {
@@ -59,9 +60,15 @@ const App = () => {
 
   // Dynamic fetching of data
   useEffect(() => {
-    if(is_search && search_query) {fetchSearchedData(movies, setMovies, page_no, search_query);}
-    else fetchNowPlayingData(movies, setMovies, page_no);
-    console.log("blahblah")
+    async function load() {
+      let is_found_all_results_;
+      if(is_search && search_query) {is_found_all_results_ = await fetchSearchedData(movies, setMovies, page_no, search_query);}
+      else is_found_all_results_ = await fetchNowPlayingData(movies, setMovies, page_no);
+      console.log("is found all results_");
+      console.log(is_found_all_results_);
+      setIsFoundAllResults(is_found_all_results_);
+    }
+    load();
   }, [page_no, is_search]);
 
   return (
