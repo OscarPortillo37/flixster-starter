@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import PropTypes from 'prop-types';
 import MovieCard from "./MovieCard";
 
-const MovieList = ({displayed_movies, movies, setMovies, setPageNo, setOpenModal, setMovieInfo, id_to_genre}) => {
+const MovieList = ({displayed_movies, movies, setMovies, setPageNo, setOpenModal, setMovieInfo, id_to_genre, is_home_tab}) => {
     // Load More
     const handleLoadSubmit = (event) => {
         event.preventDefault();
@@ -24,7 +24,7 @@ const MovieList = ({displayed_movies, movies, setMovies, setPageNo, setOpenModal
             }
             </section>
             <section id="load_more">
-                <button id="load_btn" onClick={handleLoadSubmit}>Load More...</button>
+                <button id="load_btn" style={{display: is_home_tab ? "block" : "none"}} onClick={handleLoadSubmit}>Load More...</button>
             </section>
         </section>
     );

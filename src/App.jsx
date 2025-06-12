@@ -57,7 +57,7 @@ const App = () => {
             <SortForm movies={movies} setMovies={setMovies}/>
           </section>
         </header>
-        <MovieList displayed_movies={displayed_movies} movies={movies} setMovies={setMovies} setPageNo={setPageNo} setOpenModal={setOpenModal} setMovieInfo={setMovieInfo} id_to_genre={id_to_genre}/>   
+        <MovieList displayed_movies={displayed_movies} movies={movies} setMovies={setMovies} setPageNo={setPageNo} setOpenModal={setOpenModal} setMovieInfo={setMovieInfo} id_to_genre={id_to_genre} is_home_tab={is_home_tab}/>   
       </section>
       <MovieInfoModal open_modal={open_modal} setOpenModal={setOpenModal} movie_info={movie_info} />  
       <footer>© Oscar Platforms, Inc</footer>
