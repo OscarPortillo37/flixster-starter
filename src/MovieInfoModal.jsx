@@ -7,8 +7,13 @@ const MovieInfoModal = ({open_modal, setOpenModal, movie_info}) => {
         setOpenModal(false);
     }
 
+    // Used to close modal when you press outside of the visual/center portion of the modal
+    const handleModalClick = (event) => {
+        if(event.target === event.currentTarget) setOpenModal(false);
+    }
+
     return (
-        <section className="modal" style={{display: open_modal ? `block` : 'none'}}>
+        <section className="modal" style={{display: open_modal ? `block` : 'none'}} onClick={handleModalClick}>
             <section className="modal_content">
                 <h2>{movie_info.title}</h2>
                 <img src={movie_info.img} alt={`${movie_info.title} Poster`} className="modal_movie_img"/>
@@ -24,6 +29,14 @@ const MovieInfoModal = ({open_modal, setOpenModal, movie_info}) => {
                     <p className="modal_label">Genres:</p>
                     <p>{movie_info.genres}</p>
                 </div>
+                <iframe 
+                    className="trailer_iframe"
+                    src={movie_info.trailer}
+                    title={`${movie_info.title} YouTube trailer video`}
+                    allow="fullscreen"
+                    allowFullScreen>
+                        {'Unable to render trailer YouTube link:('}
+                </iframe>
                 <div>
                     <button type="button" onClick={handleCloseClick}>Close</button>
                 </div>

@@ -48,12 +48,48 @@ header {
   gap: 2%;
 }
 
+/* Primary Contents */
+.primary_contents {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10vw;
+  height: 100%;
+  position: fixed;
+  background-color: rgb(64,64,64);
+}
+.side_tab_container {
+  width: 100%;
+  gap: 2%;
+}
+.side_tab{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10%;
+  width: 80%;
+  color: whitesmoke;
+}
+.side_tab:hover {
+  color: black;
+  background-color: white;
+}
+
 /* Movie List Formatting */
 .movie_list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin-left: 10vw;
 }
 
 .movie_card_container {
@@ -61,6 +97,7 @@ header {
 }
 
 .movie_card {
+  position: relative;
   margin: 5%;
   padding: 1%;
   height: 60vh;
@@ -75,6 +112,24 @@ header {
   font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.liked_n_watched {
+  position: absolute;
+  bottom: 0.25em;
+  right: 0.25em;
+  display: flex;
+  flex-direction: row;
+  font-size: 25px;
+  gap: 2%;
+}
+
+.watched_btn, .liked_btn {
+  all: unset;
+  cursor: pointer;
+}
+.watched_btn:hover, .liked_btn:hover {
+  background-color: transparent;
 }
 
 /* Movie Info Modal */
