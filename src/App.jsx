@@ -44,6 +44,7 @@ const App = () => {
   useEffect(() => {
     if(is_search && search_query) {fetchSearchedData(movies, setMovies, page_no, search_query);}
     else fetchNowPlayingData(movies, setMovies, page_no);
+    console.log("blahblah")
   }, [page_no, is_search]);
 
   return (

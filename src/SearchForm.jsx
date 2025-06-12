@@ -6,18 +6,21 @@ const SearchForm = ({setSearchQuery, is_search, setIsSearch, setPageNo, setMovie
     // State Variables
 
     // Handlers
-    const handleSearchSubmit = (event) => {
+    const handleSearchSubmit = async (event) => {
         event.preventDefault();
         if(is_search) { // If re-submitting w/out clear first
-            setIsSearch(false);
-            setPageNo(1);
+            await setIsSearch(false);
+            await setPageNo(1);
         }
         setMovies({results: []});
         setSearchQuery(encodeURIComponent(event.target.elements.movie_input.value));
         setIsSearch(true);
         setPageNo(1);
     }
-    const handleSearchClear = (event) => {
+    const handleSearchClear = async (event) => {
+        if(!is_search) {
+            await setIsSearch(true);
+        }
         event.preventDefault();
         event.target.form.elements.movie_input.value = '';
         setMovies({results: []});
