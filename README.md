@@ -113,7 +113,7 @@ Given more time, I would've focused more on aesthetic appeal & I might've added 
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I was able to comprehensievely display all of my funcitonality. Nothing was unplanned, though my fellow peers suggested I might be able to add a prettier set of colors to my site.
 
 ### Open-source libraries used
 
