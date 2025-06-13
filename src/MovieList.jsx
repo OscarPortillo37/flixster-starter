@@ -30,11 +30,4 @@ const MovieList = ({displayed_movies, movies, setMovies, setPageNo, setOpenModal
     );
 }
 
-// MovieList.propTypes = {
-//     movies: PropTypes.object.isRequired,
-//     setMovies: PropTypes.func.isRequired,
-//     page_np_no: PropTypes.number.isRequired,
-//     setNPPageNo: PropTypes.func.isRequired,
-// }
-
 export default MovieList;

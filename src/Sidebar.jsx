@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 const Sidebar = ({setIsHomeTab, setIsLikeTab, setIsWatchTab}) => {
+    // Handlers (set the current tab)
     const handleClickHomeTab = () => {
         setIsHomeTab(true);
         setIsLikeTab(false);

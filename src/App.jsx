@@ -41,7 +41,7 @@ const App = () => {
     }
   }, [is_home_tab, is_like_tab, is_watch_tab, movies, is_found_all_results]);
 
-  // Check if there are no movies to display
+  // Check if there are no movies left to display (to remove "Load More")
   useEffect(() => {
     if(displayed_movies.results.length === 0) {
       setIsDisplayEmpty(true);
@@ -53,12 +53,12 @@ const App = () => {
     }
   }, [displayed_movies, is_found_all_results])
 
-  // Initially fetch genre ID to genre mapping
+  // Initially fetch genre ID to genre mapping (for modal)
   useEffect(() => {
     fetchGenreText(setIDToGenre);
   }, []);
 
-  // Dynamic fetching of data
+  // Fetching more data on "Load More" & Now Playing
   useEffect(() => {
     async function load() {
       let is_found_all_results_;
@@ -79,7 +79,7 @@ const App = () => {
           <h1>🎥Flixster🎬</h1>
           <section id="search_n_sort">
             <SearchForm setSearchQuery={setSearchQuery} is_search={is_search} setIsSearch={setIsSearch} setPageNo={setPageNo} setMovies={setMovies}/>
-            <SortForm movies={movies} setMovies={setMovies}/>
+            <SortForm setMovies={setMovies}/>
           </section>
         </header>
         <h2 style={{display: is_display_empty ? "block" : "none"}}>{"No Movies Available:("}</h2>

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import ReactDOM from "react-dom";
 
 const MovieInfoModal = ({open_modal, setOpenModal, movie_info}) => {
-
+    // Used to close modal when you click the "Close" button
     const handleCloseClick = () => {
         setOpenModal(false);
     }

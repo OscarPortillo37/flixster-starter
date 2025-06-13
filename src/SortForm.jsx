@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const SortForm = ({movies, setMovies}) => {
+const SortForm = ({setMovies}) => {
+    // Handler that sorts when a new selection is made on the dropdown
     const handleChange = (event) => {
         const sort_type_value = event.target.value;
         if(sort_type_value === "sort_title") {

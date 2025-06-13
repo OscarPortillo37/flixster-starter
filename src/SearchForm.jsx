@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import PropTypes from 'prop-types';
 
 const SearchForm = ({setSearchQuery, is_search, setIsSearch, setPageNo, setMovies}) => {
-    // State Variables
-
     // Handlers
     const handleSearchSubmit = async (event) => {
         event.preventDefault();
@@ -37,11 +35,5 @@ const SearchForm = ({setSearchQuery, is_search, setIsSearch, setPageNo, setMovie
         </form>
     );
 }
-
-// SearchForm.propTypes = {
-//     movies: PropTypes.object.isRequired,
-//     setMovies: PropTypes.func.isRequired,
-//     setNPPageNo: PropTypes.func.isRequired,
-// }
 
 export default SearchForm;

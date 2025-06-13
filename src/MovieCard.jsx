@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from "react";
 import ReactDOM from "react-dom";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import {getGenresString, fetchTrailer, fetchMovieRuntime} from "./utils/fetch.js"
 
 const MovieCard = ({id, img, backdrop_img, alt_txt, title, date, overview, genre_ids, vote_avg, liked, watched, movies, setMovies, setOpenModal, setMovieInfo, id_to_genre}) => {
+    // Styling for liked and watched icons
     const liked_style = {color: liked ? "red" : "black"}
     const watched_style = {color: watched ? "cornflowerblue" : "black"}
 
@@ -48,13 +49,6 @@ const MovieCard = ({id, img, backdrop_img, alt_txt, title, date, overview, genre
             </section>
         </section>
     );
-}
-
-MovieCard.propTypes = {
-    img: PropTypes.string.isRequired,
-    alt_txt: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    vote_avg : PropTypes.number.isRequired,
 }
 
 export default MovieCard;

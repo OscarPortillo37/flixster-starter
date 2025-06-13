@@ -5,35 +5,6 @@
   min-height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  color: white;
-  padding: 20px;
-}
-
-/* @media (max-width: 600px) {
-  .movie-card {
-    width: 100%;
-  }
-
-  .search-bar {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .search-bar form {
-    flex-direction: column;
-  }
-} */
-
-
-/********************* Added ************************/
-/****************************************************/
-/****************************************************/
 .body {
   margin-left: clamp(90px, 20vw, 120px);
   flex: 1;
@@ -78,10 +49,12 @@ header {
   font-size: clamp(14px, 2vw, 16px);
   background-color: rgb(64,64,64);
 }
+
 .side_tab_container {
   width: 100%;
   gap: 2rem;
 }
+
 .side_tab{
   display: flex;
   flex-direction: row;
@@ -91,6 +64,7 @@ header {
   width: 90%;
   color: whitesmoke;
 }
+
 .side_tab:hover {
   color: black;
   background-color: white;
@@ -153,7 +127,6 @@ header {
 
 /* Movie Info Modal */
 .modal {
-  /* display: none; */
   position: fixed;
   justify-content: center;
   align-items: center;
