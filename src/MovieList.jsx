@@ -17,7 +17,7 @@ const MovieList = ({displayed_movies, movies, setMovies, setPageNo, setOpenModal
                 displayed_movies.results.map(movie => {
                     return(
                         <section className="movie_card_container">
-                            <MovieCard id={movie.id} img={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt_txt={`${movie.title} Poster`} title={movie.title} vote_avg={movie.vote_average} date={movie.release_date} overview={movie.overview} liked={movie.liked} watched={movie.watched} movies={movies} setMovies={setMovies} genre_ids={movie.genre_ids} setOpenModal={setOpenModal} setMovieInfo={setMovieInfo} id_to_genre={id_to_genre}/>
+                            <MovieCard id={movie.id} img={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} backdrop_img={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt_txt={`${movie.title} Poster`} title={movie.title} vote_avg={movie.vote_average} date={movie.release_date} overview={movie.overview} liked={movie.liked} watched={movie.watched} movies={movies} setMovies={setMovies} genre_ids={movie.genre_ids} setOpenModal={setOpenModal} setMovieInfo={setMovieInfo} id_to_genre={id_to_genre}/>
                         </section>
                     );
                 })

@@ -43,7 +43,7 @@ Deployed Application (**required**): [Flixster Deployed Site](ADD_LINK_HERE)
     - [x] The backdrop of the pop-up appears darker or in a different shade than before. including:
     - [x] The pop-up displays additional details about the moving including:
       - [ ] Runtime in minutes
-      - [ ] Backdrop poster
+      - [x] Backdrop poster
       - [x] Release date
       - [x] Genres
       - [x] An overview
@@ -55,7 +55,7 @@ Deployed Application (**required**): [Flixster Deployed Site](ADD_LINK_HERE)
     - [x] When a sort option is clicked, movies display in a grid according to selected criterion.
   - [x] Website displays:
     - [x] Header section
-    - [ ] Banner section
+    - [x] Banner section
     - [x] Search bar
     - [x] Movie grid
     - [x] Footer section
