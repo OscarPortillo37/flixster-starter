@@ -1,5 +1,7 @@
 ## Unit Assignment: Flixster
 
+**Please feel free to leave your feedback**
+
 Submitted by: **Oscar Portillo**
 
 Estimated time spent: **20** hours spent in total
