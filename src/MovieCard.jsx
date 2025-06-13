@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types"
-import {getGenresString, fetchTrailer} from "./utils/fetch.js"
+import {getGenresString, fetchTrailer, fetchMovieRuntime} from "./utils/fetch.js"
 
 const MovieCard = ({id, img, backdrop_img, alt_txt, title, date, overview, genre_ids, vote_avg, liked, watched, movies, setMovies, setOpenModal, setMovieInfo, id_to_genre}) => {
     const liked_style = {color: liked ? "red" : "black"}
@@ -32,7 +32,8 @@ const MovieCard = ({id, img, backdrop_img, alt_txt, title, date, overview, genre
         });
         const genres_str = getGenresString(genre_ids, id_to_genre);
         const trailer = await fetchTrailer(id);
-        setMovieInfo({title: title, img: backdrop_img, date: date_readable, overview: overview, trailer: trailer, genres: genres_str});
+        const runtime = await fetchMovieRuntime(id);
+        setMovieInfo({title: title, img: backdrop_img, date: date_readable, overview: overview, trailer: trailer, genres: genres_str, runtime: runtime});
         setOpenModal(true);
     }
 

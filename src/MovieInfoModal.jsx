@@ -29,6 +29,10 @@ const MovieInfoModal = ({open_modal, setOpenModal, movie_info}) => {
                     <p className="modal_label">Genres:</p>
                     <p>{movie_info.genres}</p>
                 </div>
+                <div className="modal_section">
+                    <p className="modal_label">{`Runtime`}:</p>
+                    <p>{`${movie_info.runtime} mins`}</p>
+                </div>
                 <iframe 
                     className="trailer_iframe"
                     src={movie_info.trailer}

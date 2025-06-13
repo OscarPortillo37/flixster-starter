@@ -16,7 +16,7 @@ const App = () => {
   const [is_search, setIsSearch] = useState(false);
   const [search_query, setSearchQuery] = useState("");
   const [open_modal, setOpenModal] = useState(false);
-  const [movie_info, setMovieInfo] = useState({title: "", img: "", date: "", overview: "", trailer: "", genres: ""});
+  const [movie_info, setMovieInfo] = useState({title: "", img: "", date: "", overview: "", trailer: "", genres: "", runtime: 0});
   const [id_to_genre, setIDToGenre] = useState([]);
   const [is_home_tab, setIsHomeTab] = useState(true);
   const [is_like_tab, setIsLikeTab] = useState(false);

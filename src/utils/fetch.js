@@ -69,3 +69,16 @@ export const getGenresString = (genre_ids, id_to_genre) => {
     }
     return genre_names.join(', ');
 }
+
+export const fetchMovieRuntime = async (movie_id) => {
+    const api_key = import.meta.env.VITE_APP_API_KEY;
+    try{
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}?language=en-US&api_key=${api_key}`)
+        if(!response.ok) throw new Error('Failed to fetch movie data');
+        const movie_details_json = await response.json();
+        return movie_details_json.runtime;
+    }
+    catch(e){
+        console.error('Error:', e);
+    }
+}
